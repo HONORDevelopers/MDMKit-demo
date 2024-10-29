@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hihonor.mdm.sample">
+
+    <uses-permission android:name="com.hihonor.permission.sec.MDM" />
+    <uses-permission android:name="com.hihonor.permission.sec.MDM_WIFI" />
+    <uses-permission android:name="com.hihonor.permission.sec.MDM_APP_MANAGEMENT" />
+    <uses-permission android:name="com.hihonor.permission.sec.MDM_CAPTURE_SCREEN" />
+    <uses-permission android:name="com.hihonor.permission.sec.MDM_DEVICE_MANAGER" />
+    <uses-permission android:name="com.hihonor.systemmanager.permission.ACCESS_INTERFACE" />
+    <permission android:name="com.hihonor.mdm.sample.permission.HN_MDM_KIT"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.hihonor.mdm.sample.MainActivity"
+            android:label="@string/app_name"
+            android:permission="com.hihonor.mdm.sample.permission.HN_MDM_KIT">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.hihonor.mdm.sample.ActiveModeActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name="com.hihonor.mdm.sample.LicenseActivity"
+            android:exported="false">
+        </activity>
+
+        <receiver android:name="com.hihonor.mdm.sample.SampleDeviceReceiver"
+            android:label="MDM_Sample"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

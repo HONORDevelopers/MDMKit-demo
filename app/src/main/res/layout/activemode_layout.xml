@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activemode"
+            android:textSize="15sp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/user_active_description"
+            android:textSize="15sp" />
+
+    <Button
+            android:id="@+id/btn_user_active_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="userActiveAdmin"
+            android:text="@string/user_activemode" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/force_active_description"
+            android:textSize="15sp" />
+
+    <Button
+            android:id="@+id/btn_force_active_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="forceActiveAdmin"
+            android:text="@string/force_activemode" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/delay_active_description"
+            android:textSize="15sp" />
+    <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorDark"
+            >
+
+        <EditText
+                android:id="@+id/edit_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/delay_hint"
+                android:inputType="number" />
+        <Button
+                android:id="@+id/btn_delay_active_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="delayDeactiveAdmin"
+                android:text="@string/delay_activemode" />
+    </LinearLayout>
+</LinearLayout>
